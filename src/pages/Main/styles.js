@@ -35,6 +35,20 @@ const styles = StyleSheet.create({
         margin: 10,
         width: '90%',
     },
+    
+    buttonNewJob: {
+        position: 'absolute',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 60,
+        width: 60,
+        bottom: 20,
+        right: 20,
+        backgroundColor: '#fff',
+        borderRadius: 100,
+        borderWidth: 1,
+        borderColor: 'rgba(0,0,0,0.2)',
+    },
 })
 
 export default styles

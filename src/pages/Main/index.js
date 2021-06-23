@@ -6,6 +6,7 @@ import {
     TouchableOpacity,
     View,
 } from 'react-native'
+import Icon from 'react-native-vector-icons/FontAwesome5'
 
 import ModalJob from '../../components/ModalJob'
 import JobItem from '../../components/JobItem'
@@ -121,12 +122,6 @@ class Main extends Component {
                     <Text style={styles.title}>Jobs</Text>
                 </View>
                 
-                <TouchableOpacity 
-                    onPress={() => this.setState({ showModalJob: true })}
-                >
-                    <Text>Add New Job (temp)</Text>
-                </TouchableOpacity>
-                
                 <ModalJob 
                     modalTitle="New Job"
                     isVisible={this.state.showModalJob}
@@ -148,6 +143,13 @@ class Main extends Component {
                     keyExtractor={item => `${item.id}`}
                     renderItem={({item}) => <JobItem job={item} onIntoDetails={() => this.goToDetails(item)} /> } 
                 />
+                
+                <TouchableOpacity 
+                    style={styles.buttonNewJob}
+                    onPress={() => this.setState({ showModalJob: true })}
+                >
+                    <Icon name="plus" size={30} color="#848CFF" />
+                </TouchableOpacity>
                 
             </View>
         )
