@@ -24,6 +24,12 @@ const styles = StyleSheet.create({
         fontSize: 35,
     },
     
+    emptyJobs: {
+        top: 100,
+        fontFamily: 'Poppins-Regular',
+        fontSize: 20,
+    },
+    
     containerButton: {
         alignItems: 'center',
         justifyContent: 'center',

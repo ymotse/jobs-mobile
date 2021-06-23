@@ -122,6 +122,10 @@ class Main extends Component {
                     <Text style={styles.title}>Jobs</Text>
                 </View>
                 
+                {this.state.jobs.length === 0 && 
+                    <Text style={styles.emptyJobs}> Não há anúncios de vagas cadastrados. </Text>
+                }
+                
                 <ModalJob 
                     modalTitle="New Job"
                     isVisible={this.state.showModalJob}
