@@ -5,6 +5,8 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 import MainRoutes from './MainRoutes'
+import Home from '../pages/Home'
+import About from '../pages/About'
 
 
 const Tab = createBottomTabNavigator()
@@ -24,8 +26,14 @@ export default class DefaultRoutes extends Component {
                             let iconName
             
                             switch (route.name) {
+                                case 'Home':
+                                    iconName = 'home'
+                                break
                                 case 'Jobs':
                                     iconName = 'briefcase'
+                                break
+                                case 'About':
+                                    iconName = 'ellipsis-v'
                                 break
                             }
             
@@ -34,7 +42,9 @@ export default class DefaultRoutes extends Component {
                     })}
                     initialRouteName="Jobs"
                 >
+                    <Tab.Screen name="Home" component={Home} />
                     <Tab.Screen name="Jobs" component={MainRoutes} />
+                    <Tab.Screen name="About" component={About} />
                 </Tab.Navigator>
             </NavigationContainer>
         ) 

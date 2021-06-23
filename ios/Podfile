@@ -12,6 +12,8 @@ target 'vagas_mobile' do
     :hermes_enabled => false
   )
 
+  pod 'react-native-webview', :path => '../node_modules/react-native-webview'
+
   target 'vagas_mobileTests' do
     inherit! :complete
     # Pods for testing
