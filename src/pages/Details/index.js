@@ -103,7 +103,7 @@ class Details extends Component {
                 </View>
                 
                 
-                <View style={styles.containerJobDetails}>
+                <ScrollView style={styles.containerJobDetails}>
                     <View style={styles.containerJobDetailsContent}>
                         <Text style={styles.titleContent}>Job ID</Text>
                         <Text style={styles.textContent}>{`${this.props.route.params.id}`}</Text>
@@ -125,7 +125,7 @@ class Details extends Component {
                             <Text style={styles.textContent}>{`${this.props.route.params.details}`}</Text>
                         </ScrollView>
                     </View>
-                </View>
+                </ScrollView>
                 
                 
                 <View style={styles.containerActions}>

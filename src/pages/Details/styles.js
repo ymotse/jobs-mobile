@@ -61,6 +61,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         width: '90%',
         justifyContent: 'space-around',
+        marginVertical: 20,
     },
     buttonUpdate: {
         flexDirection: 'row',

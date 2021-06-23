@@ -5,6 +5,7 @@ import {
     TouchableOpacity,
     TextInput,
     StyleSheet,
+    ScrollView,
 } from 'react-native'
 import Modal from 'react-native-modal'
 
@@ -26,65 +27,72 @@ export default class ModalJob extends Component {
                 onBackdropPress={this.props.onCloseModal}
                 onBackButtonPress={this.props.onCloseModal}
             >
-                <View style={styles.container}>
-                    <View style={styles.containerContent}>
-                        
-                        <View style={styles.containerTitle}>
-                            <Text style={styles.title}>
-                                {this.props.modalTitle}
-                            </Text>
-                        </View>
-                        
-                        <View style={styles.containerFields}>
-                            <Text style={styles.fieldLabel}>Position:</Text>
-                            <TextInput 
-                                style={styles.textInput} 
-                                maxLength={35}
-                                value={this.props.position}
-                                onChangeText={text => this.props.onChangePosition(text)}
-                            />
-                        </View>
-                        
-                        <View style={styles.containerFields}>
-                            <Text style={styles.fieldLabel}>Company:</Text>
-                            <TextInput 
-                                style={styles.textInput} 
-                                maxLength={30}
-                                value={this.props.company}
-                                onChangeText={text => this.props.onChangeCompany(text)}
+                <ScrollView contentContainerStyle={styles.scrollContainer}>
+                    <View style={styles.container}>
+                        <View style={styles.containerContent}>
+                            
+                            <View style={styles.containerTitle}>
+                                <Text style={styles.title}>
+                                    {this.props.modalTitle}
+                                </Text>
+                            </View>
+                            
+                            <View style={styles.containerFields}>
+                                <Text style={styles.fieldLabel}>Position:</Text>
+                                <TextInput 
+                                    style={styles.textInput} 
+                                    maxLength={35}
+                                    value={this.props.position}
+                                    onChangeText={text => this.props.onChangePosition(text)}
                                 />
-                        </View>
-                        
-                        <View style={styles.containerFields}>
-                            <Text style={styles.fieldLabel}>Details:</Text>
-                            <TextInput 
-                                style={styles.textInput} 
-                                multiline={true} 
-                                numberOfLines={4} 
-                                maxLength={500} 
-                                placeholder="Max 500 chars"
-                                placeholderTextColor="#bbb"
-                                value={this.props.details}
-                                onChangeText={text => this.props.onChangeDetails(text)}
-                            />
-                        </View>
-                        
-                        <View>
-                            <TouchableOpacity 
-                                style={styles.saveButton}
-                                onPress={this.props.onSaveJob}
-                            >
-                                <Text style={styles.saveButtonText}> Save Job </Text>
-                            </TouchableOpacity>
+                            </View>
+                            
+                            <View style={styles.containerFields}>
+                                <Text style={styles.fieldLabel}>Company:</Text>
+                                <TextInput 
+                                    style={styles.textInput} 
+                                    maxLength={30}
+                                    value={this.props.company}
+                                    onChangeText={text => this.props.onChangeCompany(text)}
+                                    />
+                            </View>
+                            
+                            <View style={styles.containerFields}>
+                                <Text style={styles.fieldLabel}>Details:</Text>
+                                <TextInput 
+                                    style={styles.textInput} 
+                                    multiline={true} 
+                                    numberOfLines={4} 
+                                    maxLength={500} 
+                                    placeholder="Max 500 chars"
+                                    placeholderTextColor="#bbb"
+                                    value={this.props.details}
+                                    onChangeText={text => this.props.onChangeDetails(text)}
+                                />
+                            </View>
+                            
+                            <View>
+                                <TouchableOpacity 
+                                    style={styles.saveButton}
+                                    onPress={this.props.onSaveJob}
+                                >
+                                    <Text style={styles.saveButtonText}> Save Job </Text>
+                                </TouchableOpacity>
+                            </View>
                         </View>
                     </View>
-                </View>
+                </ScrollView>
             </Modal>
         )
     }
 }
 
 const styles = StyleSheet.create({
+    scrollContainer: {
+        flexGrow: 1, 
+        justifyContent: 'center',
+    },
+    
     container: {
         flex: 1,
         alignItems: 'center',
@@ -122,6 +130,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Poppins-Regular',
         fontSize: 18,
         color: '#000',
+        maxHeight: 100,
         borderWidth: 1,
         borderRadius: 8,
         borderColor: '#EBEBEB',
